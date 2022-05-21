@@ -94,17 +94,17 @@ pub fn run_zinit(base_dirs: &BaseDirs, run_type: RunType) -> Result<()> {
     run_type.execute(zsh).args(&["-i", "-c", cmd.as_str()]).check_run()
 }
 
-pub fn run_zi(base_dirs: &BaseDirs, run_type: RunType) -> Result<()> {
-    let zsh = require("zsh")?;
-    let zshrc = zshrc(base_dirs).require()?;
+// pub fn run_zi(base_dirs: &BaseDirs, run_type: RunType) -> Result<()> {
+//     let zsh = require("zsh")?;
+//     let zshrc = zshrc(base_dirs).require()?;
 
-    base_dirs.home_dir().join(".zi").require()?;
+//     base_dirs.home_dir().join(".zi").require()?;
 
-    print_separator("zi");
+//     print_separator("zi");
 
-    let cmd = format!("source {} && zi self-update && zi update --all", zshrc.display(),);
-    run_type.execute(zsh).args(["-i", "-c", &cmd]).check_run()
-}
+//     let cmd = format!("source {} && zi self-update && zi update --all", zshrc.display(),);
+//     run_type.execute(zsh).args(["-i", "-c", &cmd]).check_run()
+// }
 
 pub fn run_zim(base_dirs: &BaseDirs, run_type: RunType) -> Result<()> {
     let zsh = require("zsh")?;
