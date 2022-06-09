@@ -282,12 +282,12 @@ pub fn run_pip3_update(run_type: RunType) -> Result<()> {
         .check_run()
 }
 
-pub fn run_stack_update(run_type: RunType) -> Result<()> {
-    let stack = utils::require("stack")?;
-    print_separator("stack");
+// pub fn run_stack_update(run_type: RunType) -> Result<()> {
+//     let stack = utils::require("stack")?;
+//     print_separator("stack");
 
-    run_type.execute(&stack).arg("upgrade").check_run()
-}
+//     run_type.execute(&stack).arg("upgrade").check_run()
+// }
 
 pub fn run_tlmgr_update(ctx: &ExecutionContext) -> Result<()> {
     cfg_if::cfg_if! {
